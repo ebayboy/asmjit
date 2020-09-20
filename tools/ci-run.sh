@@ -18,6 +18,11 @@ echo ""
 echo "AsmJit Opcode Test"
 eval "$RUN_CMD ${BUILD_DIR}/asmjit_test_opcode > /dev/null"
 
+if [ -f ${BUILD_DIR}/asmjit_test_assembler ]; then
+  echo ""
+  eval "$RUN_CMD ${BUILD_DIR}/asmjit_test_assembler --quiet"
+fi
+
 if [ -f ${BUILD_DIR}/asmjit_test_x86_asm ]; then
   echo ""
   eval "$RUN_CMD ${BUILD_DIR}/asmjit_test_x86_asm"
@@ -33,7 +38,7 @@ if [ -f ${BUILD_DIR}/asmjit_test_x86_instinfo ]; then
   eval "$RUN_CMD ${BUILD_DIR}/asmjit_test_x86_instinfo"
 fi
 
-if [ -f ${BUILD_DIR}asmjit_test_compiler ]; then
+if [ -f ${BUILD_DIR}/asmjit_test_compiler ]; then
   echo ""
   eval "$RUN_CMD ${BUILD_DIR}/asmjit_test_compiler"
 fi
